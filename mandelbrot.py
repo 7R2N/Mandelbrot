@@ -11,20 +11,20 @@ def iterations(c):
         n += 1
     return n
 
-w = 800
-h = 600
+width = 800
+height = 600
 
 rstart = -2.25
 rend = 1.25
 istart = -1.25
 iend = 1.25
 
-im = Image.new('HSV', (w, h), (0, 0, 0))
+im = Image.new('HSV', (width, height), (0, 0, 0))
 draw = ImageDraw.Draw(im)
 
-for x in range(w):
-    for y in range(h):
-        c = complex(rstart + (x / w) * (rend - rstart), istart + (y / h) * (iend - istart))
+for x in range(width):
+    for y in range(height):
+        c = complex(rstart + (x / width) * (rend - rstart), istart + (y / height) * (iend - istart))
         fr = iterations(c)
         h = int(255 * fr / maxi)
         if fr < maxi:
